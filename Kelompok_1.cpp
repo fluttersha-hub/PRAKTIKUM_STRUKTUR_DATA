@@ -480,10 +480,10 @@ public:
         while (n) {
             for (int i = 0; i < level; i++) cout << "|   ";
             if (level > 0) cout << "|-- ";
-            cout << n->namaTugas << " [" << n->status << "]" << endl;
-
+            cout << n->namaTugas << endl;
             if (n->subTugas) {
                 tampilkanHierarki(n->subTugas, level + 1);
+                cout << endl;
             }
             n = n->next;
         }
@@ -537,7 +537,6 @@ public:
                 anakBaru->mataKuliah = parent->mataKuliah;
                 anakBaru->deadline = parent->deadline;
                 anakBaru->prioritas = parent->prioritas;
-                anakBaru->status = "Belum";
                 anakBaru->subTugas = NULL;
 
                 anakBaru->next = parent->subTugas;
